@@ -15,7 +15,6 @@ get_ints (x:xs) i | i == 0 = read (take 5 x) : (get_ints xs i)
 
 quicksort :: [Int] -> [Int]
 quicksort [] = []
-quicksort (x:[]) = [x]
 quicksort xs = let left = quicksort $ filter (<= (head xs)) (tail xs)
                    right = quicksort $ filter (> (head xs)) (tail xs)
                 in left ++ [head xs] ++ right
